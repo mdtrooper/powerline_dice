@@ -21,9 +21,8 @@ import dice
 line = '{preContent}{face}{postContent}'
 
 def roll(pl, diceCombination='d6', preContent='', postContent='🎲', facesDice=None, critical=None, fumble=None, *args, **kwarg):
-    result = int(dice.roll(diceCombination))
     """
-    Return a segment with the result of roll a dice combination.
+        Return a segment with the result of roll a dice combination.
         Args:
             pl (object): The powerline logger. 
             diceCombination (string): The combination of dices in dice notation format see
@@ -38,6 +37,7 @@ def roll(pl, diceCombination='d6', preContent='', postContent='🎲', facesDice=
         Returns:
             segment (list(dict)): The result of roll as powerline segment.
     """
+    result = int(dice.roll(diceCombination))
     
     try:
         face = facesDice[result - 1] # The list start with 0
